@@ -16,7 +16,7 @@
   
   $.fn.numerical = function(options) {
     var wrapped_input = $(this);
-    var numeric_codes = [8,9,37,39,48,49,50,51,52,53,54,55,56,57];
+    var numeric_codes = [8,9,37,39,48,49,50,51,52,53,54,55,56,57,96,97,98,99,100,101,102,103,104,105,110];
     var alpha_codes =   numericRange(65,90);
     var decimal_codes = [190]
     var default_border = wrapped_input.css("border");
@@ -30,11 +30,11 @@
        decimal: false, //allow decimal characters
        badClass: 'bad_numeric_input', //what to call an element with invalid input
        goodClass: 'good_numeric_input', //what to call an element with good input
-
+      
        //What happens to the input when something is wrong
-       warning: function(target){  target.addClass(badClass).removeClass(goodClass);},
+       warning: function(target){  target.addClass(options.badClass).removeClass(options.goodClass);},
        //what happens to the input when something is not wrong
-       allow:   function(target){  target.removeClass(badClass).addClass(goodClass);},
+       allow:  function(target){  target.removeClass(options.badClass).addClass(options.goodClass);},
        //callback taht should happen before any other blur actions are called, it must return true or false
        before_blur: function(){ return true } 
 
