@@ -1,0 +1,10 @@
+Simple plugin to enforce certain numeric input on an element
+
+USAGE: 
+ 
+      $('#element').numeric({
+         min: // The minimum value allowed
+         max: // The maximum value allowed
+         alpha: // Whether to allow alpha values
+         decimal: // Whether to allow decimal values
+      })
